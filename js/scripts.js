@@ -51,4 +51,16 @@
         console.log('Santiago de Compostela temp in C: ' + d.current_condition[0].temp_C);
         console.log('Santiago de Compostela temp in F: ' + d.current_condition[0].temp_F);
     });
+
+    var temperatureControl = $('#temperatureControlRange');
+    var tempF = $('#temp_f');
+    var tempC = $('#temp_c');
+    temperatureControl.on('input', function() {
+        console.log('changed');
+        var fahrenheit = parseInt(temperatureControl.val());
+        var celsius = Math.round((fahrenheit - 32) / 1.8);
+        tempF.text(fahrenheit);
+        tempC.text(celsius);
+    });
+
 })(jQuery); // End of use strict
