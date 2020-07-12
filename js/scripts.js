@@ -63,4 +63,16 @@
         tempC.text(celsius);
     });
 
+    var moneyControl = $('#moneyControlRange');
+    var moneyDollar = $('#money_dollar');
+    var moneyEur = $('#money_eur');
+    moneyControl.on('input', function() {
+        console.log('changed');
+        var dollar = parseInt(moneyControl.val());
+        // http://api.currencylayer.com/live?access_key=3deffd407b35f85be3830393f5fc102f&format=1
+        var euro = Math.round(dollar * 88.5348) / 100;
+        moneyDollar.text(dollar);
+        moneyEur.text(euro);
+    });
+
 })(jQuery); // End of use strict
