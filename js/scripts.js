@@ -52,27 +52,38 @@
         console.log('Santiago de Compostela temp in F: ' + d.current_condition[0].temp_F);
     });
 
-    var temperatureControl = $('#temperatureControlRange');
-    var tempF = $('#temp_f');
-    var tempC = $('#temp_c');
-    temperatureControl.on('input', function() {
-        console.log('changed');
-        var fahrenheit = parseInt(temperatureControl.val());
-        var celsius = Math.round((fahrenheit - 32) / 1.8);
-        tempF.text(fahrenheit);
-        tempC.text(celsius);
-    });
+    var setRangeControl = function(ctrlSelector, fromSelector, toSelector, convert) {
+        var theControl = $(ctrlSelector);
+        var fromLabel = $(fromSelector);
+        var toLabel = $(toSelector);
+        theControl.on('input', function() {
+            var fromValue = parseInt(theControl.val());
+            var toValue = convert(fromValue);
+            fromLabel.text(fromValue);
+            toLabel.text(toValue);
+        });
+    };
 
-    var moneyControl = $('#moneyControlRange');
-    var moneyDollar = $('#money_dollar');
-    var moneyEur = $('#money_eur');
-    moneyControl.on('input', function() {
-        console.log('changed');
-        var dollar = parseInt(moneyControl.val());
-        // http://api.currencylayer.com/live?access_key=3deffd407b35f85be3830393f5fc102f&format=1
-        var euro = Math.round(dollar * 88.5348) / 100;
-        moneyDollar.text(dollar);
-        moneyEur.text(euro);
-    });
+    setRangeControl(
+        '#temperatureControlRange',
+        '#temp_f',
+        '#temp_c',
+        (fahrenheit) => Math.round((fahrenheit - 32) / 1.8)
+    );
+
+    // http://api.currencylayer.com/live?access_key=3deffd407b35f85be3830393f5fc102f&format=1
+    setRangeControl(
+        '#moneyControlRange',
+        '#money_dollar',
+        '#money_eur',
+        (dollar) => Math.round(dollar * 88.5348) / 100
+    );
+
+    setRangeControl(
+        '#massControlRange',
+        '#mass_lbs',
+        '#mass_kg',
+        (lbs) => Math.round(lbs * 45.3592) / 100
+    );
 
 })(jQuery); // End of use strict
