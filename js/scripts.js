@@ -86,4 +86,25 @@
         (lbs) => Math.round(lbs * 45.3592) / 100
     );
 
+    setRangeControl(
+        '#lengthControlRange',
+        '#length_inches',
+        '#length_cm',
+        (inches) => Math.round(inches * 254) / 100
+    );
+
+    setRangeControl(
+        '#lengthControlRange_2',
+        '#length_feet',
+        '#length_m',
+        (feet) => Math.round(feet * 30.48) / 100
+    );
+
+    setRangeControl(
+        '#lengthControlRange_3',
+        '#length_miles',
+        '#length_km',
+        (miles) => Math.round(miles * 160.934) / 100
+    );
+
 })(jQuery); // End of use strict

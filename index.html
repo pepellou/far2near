@@ -26,9 +26,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Geography</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#temperature">ºF &harr; ºC</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#money">$ &harr; €</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#mass">lbs &harr; kg</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#temperature"><i class="fa fa-thermometer-half" aria-hidden="true"></i> Temperature</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#money"><i class="fa fa-dollar-sign" aria-hidden="true"></i> Money</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#mass"><i class="fa fa-balance-scale" aria-hidden="true"></i> Mass</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#length"><i class="fa fa-ruler-combined" aria-hidden="true"></i> Length</a></li>
                 </ul>
             </div>
         </nav>
@@ -75,7 +76,7 @@
             <hr class="m-0" />
             <section class="resume-section">
                 <div class="resume-section-content">
-                    <h2 id="temperature">Temperature</h2>
+                    <h2 id="temperature"><i class="fa fa-thermometer-half" aria-hidden="true"></i> Temperature</h2>
                     <div class="container">
                         <form>
                             <div class="form-group">
@@ -85,7 +86,7 @@
                             </div>
                         </form>
                     </div>
-                    <h2 id="money">Money</h2>
+                    <h2 id="money"><i class="fa fa-dollar-sign" aria-hidden="true"></i> Money</h2>
                     <div class="container">
                         <form>
                             <div class="form-group">
@@ -95,13 +96,29 @@
                             </div>
                         </form>
                     </div>
-                    <h2 id="mass">Mass</h2>
+                    <h2 id="mass"><i class="fa fa-balance-scale" aria-hidden="true"></i> Mass</h2>
                     <div class="container">
                         <form>
                             <div class="form-group">
                                 <label for="massControlRange"><span id="mass_lbs">1</span> lbs</label>
                                 <label style="text-align: right; width: 100%; display: block; margin-top: -36px;" for="massControlRange"><span id="mass_kg">0.45</span> kg</label>
-                                <input type="range" class="form-control-range" id="massControlRange" min="1" max="100" step="1" value="1">
+                                <input type="range" class="form-control-range" id="massControlRange" min="1" max="250" step="1" value="1">
+                            </div>
+                        </form>
+                    </div>
+                    <h2 id="length"><i class="fa fa-ruler-combined" aria-hidden="true"></i> Length</h2>
+                    <div class="container">
+                        <form>
+                            <div class="form-group">
+                                <label for="lengthControlRange"><span id="length_inches">1</span> inches</label>
+                                <label style="text-align: right; width: 100%; display: block; margin-top: -36px;" for="lengthControlRange"><span id="length_cm">2.54</span> cm</label>
+                                <input type="range" class="form-control-range" id="lengthControlRange" min="1" max="100" step="1" value="1">
+                                <label for="lengthControlRange_2"><span id="length_feet">1</span> feet</label>
+                                <label style="text-align: right; width: 100%; display: block; margin-top: -36px;" for="lengthControlRange_2"><span id="length_m">0.3</span> m</label>
+                                <input type="range" class="form-control-range" id="lengthControlRange_2" min="1" max="100" step="1" value="1">
+                                <label for="lengthControlRange_3"><span id="length_miles">1</span> miles</label>
+                                <label style="text-align: right; width: 100%; display: block; margin-top: -36px;" for="lengthControlRange_3"><span id="length_km">1.61</span> km</label>
+                                <input type="range" class="form-control-range" id="lengthControlRange_3" min="1" max="500" step="1" value="1">
                             </div>
                         </form>
                     </div>
