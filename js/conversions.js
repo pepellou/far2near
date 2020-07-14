@@ -40,10 +40,19 @@ var conversionsCategories = [
                 from: 'lbs',
                 to: 'kg',
                 min: 1,
-                max: 1000,
+                max: 250,
                 step: 1,
                 value: 1,
-                convert: ($) => round2($ * 0.453592)
+                convert: (lbs) => round2(lbs * 0.453592)
+            },
+            {
+                from: 'oz',
+                to: 'g',
+                min: 1,
+                max: 100,
+                step: 1,
+                value: 1,
+                convert: (oz) => round2(oz * 28.3495)
             }
         ]
     },
@@ -70,6 +79,15 @@ var conversionsCategories = [
                 convert: (ft) => round2(ft * 0.3048)
             },
             {
+                from: 'yd',
+                to: 'm',
+                min: 1,
+                max: 100,
+                step: 1,
+                value: 1,
+                convert: (yd) => round2(yd * 0.9144)
+            },
+            {
                 from: 'miles',
                 to: 'km',
                 min: 1,
@@ -86,12 +104,48 @@ var conversionsCategories = [
         conversions: [
             {
                 from: 'gal',
-                to: 'l',
+                to: 'liters',
                 min: 1,
                 max: 100,
                 step: 1,
                 value: 1,
                 convert: (gal) => round2(gal * 3.78541)
+            },
+            {
+                from: 'quarts',
+                to: 'liters',
+                min: 1,
+                max: 100,
+                step: 1,
+                value: 1,
+                convert: (quarts) => round2(quarts * 0.946353)
+            },
+            {
+                from: 'pints',
+                to: 'liters',
+                min: 1,
+                max: 100,
+                step: 1,
+                value: 1,
+                convert: (pints) => round2(pints * 0.473176)
+            },
+            {
+                from: 'cups',
+                to: 'liters',
+                min: 1,
+                max: 100,
+                step: 1,
+                value: 1,
+                convert: (cups) => round2(cups * 0.236588)
+            },
+            {
+                from: 'fl. oz.',
+                to: 'ml',
+                min: 1,
+                max: 100,
+                step: 1,
+                value: 1,
+                convert: (floz) => round2(floz * 29.5735)
             }
         ]
     }

@@ -47,9 +47,9 @@
         );
         $('a#' + linkId).click(smoothScroll);
         converters.append(
-            '<h2 id="' + category.name + '"><i class="fa '
+            '<h3 id="' + category.name + '"><i class="fa '
                 + category.icon + '" aria-hidden="true"></i> '
-                + capitalize(category.name) + '</h2>'
+                + capitalize(category.name) + '</h3>'
         );
         for (var j = 0; j < category.conversions.length; j++) {
             var conversion = category.conversions[j];
@@ -64,7 +64,7 @@
             var max = conversion.max;
             var step = conversion.step;
             converters.append(
-                '<div class="container"><form><div class="form-group">'
+                '<div class="container"><form><div class="form-group mb-5">'
                     + '<label for="' + controlRangeName + '"><span id="' + fromId + '">' + fromValue + '</span> ' + fromUnits + '</label>'
                     + '<label style="text-align: right; width: 100%; display: block; margin-top: -36px;" for="' + controlRangeName + '"><span id="' + toId + '">' + toValue + '</span> ' + toUnits + '</label>'
                     + '<input type="range" class="form-control-range" id="' + controlRangeName + '" min="' + min + '" max="' + max + '" step="' + step + '" value="' + fromValue + '">'
