@@ -7,28 +7,7 @@
     "use strict"; // Start of use strict
 
     // Smooth scrolling using jQuery easing
-    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
-        if (
-            location.pathname.replace(/^\//, "") ==
-                this.pathname.replace(/^\//, "") &&
-            location.hostname == this.hostname
-        ) {
-            var target = $(this.hash);
-            target = target.length
-                ? target
-                : $("[name=" + this.hash.slice(1) + "]");
-            if (target.length) {
-                $("html, body").animate(
-                    {
-                        scrollTop: target.offset().top,
-                    },
-                    1000,
-                    "easeInOutExpo"
-                );
-                return false;
-            }
-        }
-    });
+    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(smoothScroll);
 
     // Closes responsive menu when a scroll trigger link is clicked
     $(".js-scroll-trigger").click(function () {
@@ -57,27 +36,16 @@
     var menu = $('#menu');
     var converters = $('#converters');
 
-    var capitalize = (str) => str.replace(/^./, str[0].toUpperCase());
-
-    var setRangeControl = function(ctrlSelector, fromSelector, toSelector, convert) {
-        var theControl = $(ctrlSelector);
-        var fromLabel = $(fromSelector);
-        var toLabel = $(toSelector);
-        theControl.on('input', function() {
-            var fromValue = parseInt(theControl.val());
-            var toValue = convert(fromValue);
-            fromLabel.text(fromValue);
-            toLabel.text(toValue);
-        });
-    };
-
     for (var i = 0; i < conversionsCategories.length; i++) {
         var category = conversionsCategories[i];
+        var linkId = 'link_to_' + category.name;
         menu.append(
-            '<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#' + category.name + '">'
+            '<li class="nav-item"><a id="' + linkId + '" class="nav-link js-scroll-trigger" href="#'
+                + category.name + '">'
                 + '<i class="fa ' + category.icon + '" aria-hidden="true"></i> '
                 + category.name + '</a></li>'
         );
+        $('a#' + linkId).click(smoothScroll);
         converters.append(
             '<h2 id="' + category.name + '"><i class="fa '
                 + category.icon + '" aria-hidden="true"></i> '

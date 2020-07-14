@@ -82,7 +82,7 @@ var conversionsCategories = [
     },
     {
         name: 'volume',
-        icon: 'fa-glass',
+        icon: 'fa-coffee',
         conversions: [
             {
                 from: 'gal',
