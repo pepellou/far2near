@@ -146,6 +146,24 @@ var conversionsCategories = [
                 step: 1,
                 value: 1,
                 convert: (floz) => round2(floz * 29.5735)
+            },
+            {
+                from: 'tablespoon',
+                to: 'ml',
+                min: 1,
+                max: 100,
+                step: 1,
+                value: 1,
+                convert: (tablespoon) => round2(tablespoon * 14.7868)
+            },
+            {
+                from: 'teaspoon',
+                to: 'ml',
+                min: 1,
+                max: 100,
+                step: 1,
+                value: 1,
+                convert: (teaspoon) => round2(teaspoon * 4.92892)
             }
         ]
     }
