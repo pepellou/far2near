@@ -21,7 +21,7 @@
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/pepellou/far2near/issues). You can also take a look at the [contributing guide](https://github.com/pepellou/far2near/blob/master/CONTRIBUTING.md).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/pepellou/far2near/issues). You can also take a look at the [contributing guide](CONTRIBUTING.md).
 
 ## Show your support
 
